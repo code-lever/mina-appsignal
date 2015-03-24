@@ -45,9 +45,10 @@ If not, you'll need to set some options.
 
 | Name                           | Description                                                |
 | ------------------------------ | -----------------------------------------------------------|
-| `appsignal_api_key`            | AppSignal push api key |
+| `appsignal_api_key`            | AppSignal push api key                                     |
 |                                | Read from `config/appsignal.yml` or `ENV['APPSIGNAL_PUSH_API_KEY']` if available |
 | `appsignal_app_name`           | AppSignal application name |
+|                                | Read from `config/appsignal.yml` or `ENV['APPSIGNAL_APP_NAME']` if available |
 | `appsignal_local_username`     | Local username of deploying user (optional)                |
 | `appsignal_notification_debug` | `true` to enable notification debugging info               |
 
