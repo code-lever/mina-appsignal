@@ -74,9 +74,15 @@ namespace :appsignal do
 
     body = { revision: revision }
     body[:repository] = branch if branch?
-    body[:user] = appsignal_local_username if appsignal_local_username
+    body[:user] = appsignal_local_username.shellescape if appsignal_local_username
 
     silent = appsignal_notification_debug ? '-v' : '-s -o /dev/null'
+    script = [%Q(curl #{silent} -X POST)]
+    script << %Q(-d '#{body.to_json}')
+    script << %Q("https://push.appsignal.com/1/markers?api_key=#{api_key}&name=#{app_name}&environment=#{rails_env}")
+
+    queue! 'echo "-----> Notifying AppSignal of deployment"'
+    queue script.join(' ')
 
   end
 
