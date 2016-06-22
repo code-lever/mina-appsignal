@@ -22,6 +22,7 @@
 
 require 'mina/rails'
 require 'json'
+require 'shellwords'
 
 # ## Settings
 # Any and all of these settings can be overriden in your `deploy.rb`.
