@@ -50,7 +50,7 @@ namespace :appsignal do
   desc 'Notifies AppSignal of your deployment'
   task notify: :environment do
     api_key = fetch(:appsignal_api_key)
-    api_key ||= Mina::AppSignal.from_config(rails_env, 'push_api_key')
+    api_key ||= Mina::AppSignal.from_config(fetch(:rails_env), 'push_api_key')
     api_key ||= ENV['APPSIGNAL_PUSH_API_KEY']
     unless api_key
       print_error '`:appsignal_api_key` must be defined to notify'
@@ -58,7 +58,7 @@ namespace :appsignal do
     end
 
     app_name = fetch(:appsignal_app_name)
-    app_name ||= Mina::AppSignal.from_config(rails_env, 'name')
+    app_name ||= Mina::AppSignal.from_config(fetch(:rails_env), 'name')
     app_name ||= ENV['APPSIGNAL_APP_NAME']
     unless app_name
       print_error '`:appsignal_app_name` must be defined to notify'
@@ -79,7 +79,7 @@ namespace :appsignal do
     silent = fetch(:appsignal_notification_debug) ? '-v' : '-s -o /dev/null'
     script = [%Q(curl #{silent} -X POST)]
     script << %Q(-d '#{body.to_json}')
-    script << %Q("https://push.appsignal.com/1/markers?api_key=#{api_key}&name=#{app_name}&environment=#{rails_env}")
+    script << %Q("https://push.appsignal.com/1/markers?api_key=#{api_key}&name=#{app_name}&environment=#{fetch(:rails_env)}")
 
     comment %{Notifying AppSignal of deployment}
     command %[#{script.join(' ')}]
