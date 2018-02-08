@@ -50,7 +50,6 @@ If not, you'll need to set some options.
 | `appsignal_app_name`           | AppSignal application name |
 |                                | Read from `config/appsignal.yml` or `ENV['APPSIGNAL_APP_NAME']` if available |
 | `appsignal_local_username`     | Local username of deploying user (optional)                |
-| `appsignal_notification_debug` | `true` to enable notification debugging info               |
 
 ## Contributing
 

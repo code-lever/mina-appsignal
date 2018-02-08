@@ -41,10 +41,6 @@ set :appsignal_app_name, nil
 # Sets the name of the user who deployed.  Defaults to `whoami`.  Optional.
 set :appsignal_local_username, %x[whoami].strip rescue nil
 
-# ### appsignal_notification_debug
-# If true, enables verbosity in the notification to help debug issues.  Defaults to false.
-set :appsignal_notification_debug, false
-
 namespace :appsignal do
 
   desc 'Notifies AppSignal of your deployment'
