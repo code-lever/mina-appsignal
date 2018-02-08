@@ -54,7 +54,7 @@ namespace :appsignal do
     api_key ||= ENV['APPSIGNAL_PUSH_API_KEY']
     unless api_key
       print_error '`:appsignal_api_key` must be defined to notify'
-      exit
+      next
     end
 
     app_name = fetch(:appsignal_app_name)
@@ -62,12 +62,12 @@ namespace :appsignal do
     app_name ||= ENV['APPSIGNAL_APP_NAME']
     unless app_name
       print_error '`:appsignal_app_name` must be defined to notify'
-      exit
+      next
     end
 
     unless set?(:branch) || set?(:commit)
       print_error 'Must define either `:branch` or `:commit`'
-      exit
+      next
     end
 
     revision = set?(:commit) ? fetch(:commit) : %x[git rev-parse #{fetch(:branch)}].strip
