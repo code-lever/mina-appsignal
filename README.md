@@ -1,4 +1,4 @@
-# Mina::AppSignal [![Build Status](https://travis-ci.org/code-lever/mina-appsignal.png)](https://travis-ci.org/code-lever/mina-appsignal) [![Dependency Status](https://gemnasium.com/code-lever/mina-appsignal.png)](https://gemnasium.com/code-lever/mina-appsignal) [![Code Climate](https://codeclimate.com/github/code-lever/mina-appsignal.png)](https://codeclimate.com/github/code-lever/mina-appsignal)
+# Mina::AppSignal [![Build Status](https://travis-ci.org/code-lever/mina-appsignal.png)](https://travis-ci.org/code-lever/mina-appsignal) [![Code Climate](https://codeclimate.com/github/code-lever/mina-appsignal.png)](https://codeclimate.com/github/code-lever/mina-appsignal)
 
 [Mina](https://github.com/mina-deploy/mina) tasks for interacting with [AppSignal](http://appsignal.com).
 
