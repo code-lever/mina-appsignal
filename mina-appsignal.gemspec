@@ -19,7 +19,7 @@ Gem::Specification.new do |spec|
   spec.require_paths = ['lib']
 
   spec.add_dependency 'mina', '~> 1.2'
-  spec.add_dependency 'json', '~> 2.1.0'
+  spec.add_dependency 'json', '~> 2.3.0'
 
   spec.add_development_dependency 'awesome_print'
   spec.add_development_dependency 'bundler', '~> 2.3'
